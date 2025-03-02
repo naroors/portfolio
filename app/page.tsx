@@ -94,7 +94,7 @@ export default function Portfolio() {
           <div className="fixed bottom-6 left-0 right-0 z-50 mx-auto w-fit md:block">
             <nav
               className={cn(
-                "flex items-center justify-center gap-1 rounded-full border border-primary/10 bg-background/80 px-4 py-2 backdrop-blur transition-all",
+                "flex items-center justify-center gap-1 rounded-full border border-primary/10 bg-background/80 px-2 py-1 backdrop-blur transition-all sm:px-4 sm:py-2",
                 scrolled ? "shadow-lg" : "",
               )}
             >
@@ -377,12 +377,12 @@ function NavLink({
       href={href}
       onClick={handleClick}
       className={cn(
-        "group relative flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium transition-colors",
+        "group relative flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium transition-colors sm:px-3",
         isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground",
       )}
     >
       {icon}
-      <span>{label}</span>
+      <span className="hidden sm:inline">{label}</span>
       <span
         className={cn(
           "absolute inset-0 -z-10 rounded-full transition-all duration-300",
