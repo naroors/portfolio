@@ -10,6 +10,7 @@ import { Github, Twitter, Linkedin, Mail, Home, User, Briefcase, FileText, Globe
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Dictionary, getDictionary, getSavedLanguage, saveLanguage, detectBrowserLanguage } from "@/lib/dictionary"
+import { ActionSearch } from "@/components/action-search"
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false)
@@ -121,6 +122,9 @@ export default function Portfolio() {
 
   return (
     <>
+      {/* Dodajemy komponent ActionSearch */}
+      <ActionSearch dictionary={dictionary} />
+
       {/* Ekran ładowania */}
       <div 
         className={cn(
@@ -158,6 +162,13 @@ export default function Portfolio() {
               <Globe className="h-4 w-4 mr-2" />
               <span>{dictionary.languageSwitch}</span>
             </Button>
+          </div>
+
+          {/* Pomocnicza wskazówka skrótu klawiszowego */}
+          <div className="fixed top-4 left-4 z-50 sm:flex items-center hidden">
+            <div className="px-3 py-1.5 text-xs text-muted-foreground bg-background/50 backdrop-blur rounded-full border border-primary/10">
+              <span>{dictionary.actionSearch.shortcutHint}</span>
+            </div>
           </div>
 
           {/* Floating Navbar - Bottom */}

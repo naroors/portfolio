@@ -1,63 +1,69 @@
 {
   "loading": "Ładowanie portfolio...",
   "nav": {
-    "home": "Strona główna",
-    "about": "O mnie",
+    "home": "Strona Główna",
+    "about": "O Mnie",
     "projects": "Projekty",
     "resume": "CV",
     "contact": "Kontakt"
   },
   "home": {
     "greeting": "Cześć, jestem",
-    "intro": "Tworzę nowoczesne aplikacje webowe z naciskiem na doświadczenie użytkownika i wydajność.",
+    "intro": "Pasjonat tworzenia wyjątkowych doświadczeń cyfrowych. Obecnie skupiam się na tworzeniu dostępnych, zorientowanych na człowieka produktów.",
     "cta": {
-      "viewWork": "Zobacz moje projekty",
+      "viewWork": "Zobacz projekty",
       "contact": "Skontaktuj się"
     }
   },
   "about": {
-    "title": "O mnie",
-    "bio1": "Jestem fullstack developerem specjalizującym się w React, Next.js i Node.js. Pasjonuje mnie tworzenie czystych, wydajnych i przyjaznych dla użytkownika aplikacji, które rozwiązują rzeczywiste problemy.",
-    "bio2": "Z ponad 5-letnim doświadczeniem w branży, pracowałem nad różnorodnymi projektami od stron internetowych małych firm po aplikacje dla dużych przedsiębiorstw."
+    "title": "O Mnie",
+    "bio1": "Jestem full-stack developerem z pasją do tworzenia pięknych, funkcjonalnych i przyjaznych dla użytkownika stron internetowych i aplikacji. Mam doświadczenie w pracy z różnymi technologiami i frameworkami.",
+    "bio2": "Gdy nie koduję, można mnie znaleźć eksplorującego nowe technologie, przyczyniającego się do projektów open-source lub spędzającego czas na świeżym powietrzu."
   },
   "projects": {
-    "title": "Wybrane projekty",
+    "title": "Projekty",
     "description": "Krótki opis projektu i wykorzystanych technologii.",
     "viewProject": "Zobacz projekt",
-    "viewCode": "Kod źródłowy"
+    "viewCode": "Zobacz kod"
   },
   "resume": {
     "title": "CV",
     "skills": "Umiejętności",
     "experience": "Doświadczenie",
-    "education": "Edukacja",
     "job1": {
-      "title": "Starszy Frontend Developer",
+      "title": "Senior Frontend Developer",
       "date": "2021 - Obecnie",
       "company": "Tech Company Inc.",
-      "description": "Kierowałem rozwojem głównego produktu firmy, poprawiając wydajność o 40%."
+      "description": "Praca nad dużą aplikacją webową z wykorzystaniem React, TypeScript i Next.js. Implementacja złożonych komponentów UI i optymalizacja wydajności."
     },
     "job2": {
-      "title": "Web Developer",
+      "title": "Full-Stack Developer",
       "date": "2018 - 2021",
-      "company": "Digital Agency Ltd.",
-      "description": "Tworzyłem i utrzymywałem strony internetowe dla różnych klientów przy użyciu nowoczesnych technologii webowych."
+      "company": "Digital Agency",
+      "description": "Tworzenie stron internetowych i aplikacji dla klientów. Praca z React, Node.js i różnymi bazami danych."
     },
+    "education": "Edukacja",
     "edu": {
-      "degree": "Licencjat z Informatyki",
+      "degree": "Licencjat Informatyki",
       "date": "2014 - 2018",
       "school": "Uniwersytet Technologiczny"
     },
-    "download": "Pobierz pełne CV"
+    "download": "Pobierz CV"
   },
   "contact": {
     "title": "Kontakt",
-    "description": "Jeśli szukasz developera, masz pytanie lub po prostu chcesz się skontaktować, napisz do mnie.",
-    "schedule": "Zaplanuj rozmowę",
-    "sendEmail": "Wyślij e-mail"
+    "description": "Śmiało skontaktuj się ze mną, jeśli masz jakieś pytania lub chciałbyś współpracować.",
+    "schedule": "Umów spotkanie",
+    "sendEmail": "Wyślij email"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone."
   },
-  "languageSwitch": "English"
+  "languageSwitch": "English",
+  "actionSearch": {
+    "placeholder": "Szukaj w portfolio...",
+    "noResults": "Nie znaleziono wyników",
+    "navigationHint": "Nawigacja:",
+    "shortcutHint": "Naciśnij Ctrl + Spacja aby otworzyć wyszukiwarkę"
+  }
 } 

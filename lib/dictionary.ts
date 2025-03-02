@@ -1,4 +1,4 @@
-export type Dictionary = {
+export interface Dictionary {
   loading: string;
   nav: {
     home: string;
@@ -60,6 +60,12 @@ export type Dictionary = {
     rights: string;
   };
   languageSwitch: string;
+  actionSearch: {
+    placeholder: string;
+    noResults: string;
+    navigationHint: string;
+    shortcutHint: string;
+  };
 }
 
 export const getDictionary = async (locale: string): Promise<Dictionary> => {

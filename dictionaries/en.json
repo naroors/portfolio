@@ -8,8 +8,8 @@
     "contact": "Contact"
   },
   "home": {
-    "greeting": "Hello, I'm",
-    "intro": "I build modern web applications with a focus on user experience and performance.",
+    "greeting": "Hi, I'm",
+    "intro": "A passionate full-stack developer specializing in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.",
     "cta": {
       "viewWork": "View My Work",
       "contact": "Contact Me"
@@ -17,47 +17,53 @@
   },
   "about": {
     "title": "About Me",
-    "bio1": "I'm a fullstack web developer with expertise in React, Next.js, and Node.js. I'm passionate about creating clean, efficient, and user-friendly applications that solve real-world problems.",
-    "bio2": "With over 5 years of experience in the industry, I've worked on a variety of projects from small business websites to large-scale enterprise applications."
+    "bio1": "I'm a full-stack developer with a passion for building beautiful, functional, and user-friendly websites and applications. I have experience working with a variety of technologies and frameworks.",
+    "bio2": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities."
   },
   "projects": {
-    "title": "Featured Projects",
+    "title": "Projects",
     "description": "A brief description of the project and the technologies used.",
     "viewProject": "View Project",
-    "viewCode": "Code"
+    "viewCode": "View Code"
   },
   "resume": {
     "title": "Resume",
     "skills": "Skills",
     "experience": "Experience",
-    "education": "Education",
     "job1": {
       "title": "Senior Frontend Developer",
       "date": "2021 - Present",
       "company": "Tech Company Inc.",
-      "description": "Led the development of the company's main product, improving performance by 40%."
+      "description": "Working on a large-scale web application using React, TypeScript, and Next.js. Implementing complex UI components and optimizing performance."
     },
     "job2": {
-      "title": "Web Developer",
+      "title": "Full-Stack Developer",
       "date": "2018 - 2021",
-      "company": "Digital Agency Ltd.",
-      "description": "Developed and maintained websites for various clients using modern web technologies."
+      "company": "Digital Agency",
+      "description": "Developed websites and applications for clients. Worked with React, Node.js, and various databases."
     },
+    "education": "Education",
     "edu": {
-      "degree": "BSc in Computer Science",
+      "degree": "Bachelor of Computer Science",
       "date": "2014 - 2018",
       "school": "University of Technology"
     },
-    "download": "Download Full Resume"
+    "download": "Download CV"
   },
   "contact": {
-    "title": "Get In Touch",
-    "description": "Feel free to reach out if you're looking for a developer, have a question, or just want to connect.",
-    "schedule": "Schedule a call",
-    "sendEmail": "Send an email"
+    "title": "Contact",
+    "description": "Feel free to reach out if you have any questions or would like to work together.",
+    "schedule": "Schedule a Meeting",
+    "sendEmail": "Send an Email"
   },
   "footer": {
     "rights": "All rights reserved."
   },
-  "languageSwitch": "Polski"
+  "languageSwitch": "Polski",
+  "actionSearch": {
+    "placeholder": "Search in portfolio...",
+    "noResults": "No results found",
+    "navigationHint": "Navigation:",
+    "shortcutHint": "Press Ctrl + Space to open search"
+  }
 } 
