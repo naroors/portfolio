@@ -1,0 +1,63 @@
+{
+  "loading": "Ładowanie portfolio...",
+  "nav": {
+    "home": "Strona główna",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "resume": "CV",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "greeting": "Cześć, jestem",
+    "intro": "Tworzę nowoczesne aplikacje webowe z naciskiem na doświadczenie użytkownika i wydajność.",
+    "cta": {
+      "viewWork": "Zobacz moje projekty",
+      "contact": "Skontaktuj się"
+    }
+  },
+  "about": {
+    "title": "O mnie",
+    "bio1": "Jestem fullstack developerem specjalizującym się w React, Next.js i Node.js. Pasjonuje mnie tworzenie czystych, wydajnych i przyjaznych dla użytkownika aplikacji, które rozwiązują rzeczywiste problemy.",
+    "bio2": "Z ponad 5-letnim doświadczeniem w branży, pracowałem nad różnorodnymi projektami od stron internetowych małych firm po aplikacje dla dużych przedsiębiorstw."
+  },
+  "projects": {
+    "title": "Wybrane projekty",
+    "description": "Krótki opis projektu i wykorzystanych technologii.",
+    "viewProject": "Zobacz projekt",
+    "viewCode": "Kod źródłowy"
+  },
+  "resume": {
+    "title": "CV",
+    "skills": "Umiejętności",
+    "experience": "Doświadczenie",
+    "education": "Edukacja",
+    "job1": {
+      "title": "Starszy Frontend Developer",
+      "date": "2021 - Obecnie",
+      "company": "Tech Company Inc.",
+      "description": "Kierowałem rozwojem głównego produktu firmy, poprawiając wydajność o 40%."
+    },
+    "job2": {
+      "title": "Web Developer",
+      "date": "2018 - 2021",
+      "company": "Digital Agency Ltd.",
+      "description": "Tworzyłem i utrzymywałem strony internetowe dla różnych klientów przy użyciu nowoczesnych technologii webowych."
+    },
+    "edu": {
+      "degree": "Licencjat z Informatyki",
+      "date": "2014 - 2018",
+      "school": "Uniwersytet Technologiczny"
+    },
+    "download": "Pobierz pełne CV"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Jeśli szukasz developera, masz pytanie lub po prostu chcesz się skontaktować, napisz do mnie.",
+    "schedule": "Zaplanuj rozmowę",
+    "sendEmail": "Wyślij e-mail"
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "languageSwitch": "English"
+} 

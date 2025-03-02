@@ -5,16 +5,44 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Github, Twitter, Linkedin, Mail, Home, User, Briefcase, FileText } from "lucide-react"
+import { Github, Twitter, Linkedin, Mail, Home, User, Briefcase, FileText, Globe } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { Dictionary, getDictionary, getSavedLanguage, saveLanguage, detectBrowserLanguage } from "@/lib/dictionary"
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const [isLoading, setIsLoading] = useState(true)
   const [showContent, setShowContent] = useState(false)
+  const [language, setLanguage] = useState<string>('en')
+  const [dictionary, setDictionary] = useState<Dictionary | null>(null)
+
+  // Load translations on mount
+  useEffect(() => {
+    const initLanguage = async () => {
+      // Try to get saved language from localStorage or detect from browser
+      const savedLanguage = getSavedLanguage();
+      setLanguage(savedLanguage);
+      
+      // Load dictionary
+      const dict = await getDictionary(savedLanguage);
+      setDictionary(dict);
+    };
+    
+    initLanguage();
+  }, []);
+
+  // Switch language
+  const toggleLanguage = async () => {
+    const newLanguage = language === 'en' ? 'pl' : 'en';
+    setLanguage(newLanguage);
+    saveLanguage(newLanguage);
+    
+    const dict = await getDictionary(newLanguage);
+    setDictionary(dict);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,6 +91,22 @@ export default function Portfolio() {
     }
   }, [])
 
+  // If dictionary is not loaded yet, show loading screen
+  if (!dictionary) {
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-background to-background/80">
+        <div className="relative h-24 w-24 animate-spin rounded-full border-4 border-primary border-t-transparent">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-xl font-semibold text-primary">ON</span>
+          </div>
+        </div>
+        <p className="mt-8 text-xl font-semibold text-primary animate-pulse">
+          Loading...
+        </p>
+      </div>
+    );
+  }
+
   return (
     <>
       {/* Ekran ładowania */}
@@ -78,7 +122,7 @@ export default function Portfolio() {
           </div>
         </div>
         <p className="mt-8 text-xl font-semibold text-primary animate-pulse">
-          Loading assets...
+          {dictionary.loading}
         </p>
       </div>
 
@@ -90,6 +134,19 @@ export default function Portfolio() {
         )}
       >
         <div className="mx-auto max-w-[800px] px-4 sm:px-6">
+          {/* Language Switcher - Top Right */}
+          <div className="fixed top-4 right-4 z-50">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="rounded-full" 
+              onClick={toggleLanguage}
+            >
+              <Globe className="h-4 w-4 mr-2" />
+              <span>{dictionary.languageSwitch}</span>
+            </Button>
+          </div>
+
           {/* Floating Navbar - Bottom */}
           <div className="fixed bottom-6 left-0 right-0 z-50 mx-auto w-fit md:block">
             <nav
@@ -98,24 +155,24 @@ export default function Portfolio() {
                 scrolled ? "shadow-lg" : "",
               )}
             >
-              <NavLink href="#home" icon={<Home className="h-4 w-4" />} label="Home" activeSection={activeSection} />
-              <NavLink href="#about" icon={<User className="h-4 w-4" />} label="About" activeSection={activeSection} />
+              <NavLink href="#home" icon={<Home className="h-4 w-4" />} label={dictionary.nav.home} activeSection={activeSection} />
+              <NavLink href="#about" icon={<User className="h-4 w-4" />} label={dictionary.nav.about} activeSection={activeSection} />
               <NavLink
                 href="#projects"
                 icon={<Briefcase className="h-4 w-4" />}
-                label="Projects"
+                label={dictionary.nav.projects}
                 activeSection={activeSection}
               />
               <NavLink
                 href="#resume"
                 icon={<FileText className="h-4 w-4" />}
-                label="Resume"
+                label={dictionary.nav.resume}
                 activeSection={activeSection}
               />
               <NavLink
                 href="#contact"
                 icon={<Mail className="h-4 w-4" />}
-                label="Contact"
+                label={dictionary.nav.contact}
                 activeSection={activeSection}
               />
             </nav>
@@ -133,17 +190,17 @@ export default function Portfolio() {
                   className="rounded-full mb-4"
                 />
                 <h2 className="text-4xl font-bold">
-                  Hello, I'm <span className="animate-pulse">Oliwer</span>
+                  {dictionary.home.greeting} <span className="animate-pulse">Oliwer</span>
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-                  I build modern web applications with a focus on user experience and performance.
+                  {dictionary.home.intro}
                 </p>
                 <div className="mt-8 flex gap-4">
                   <Button asChild>
-                    <Link href="#projects">View My Work</Link>
+                    <Link href="#projects">{dictionary.home.cta.viewWork}</Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link href="#contact">Contact Me</Link>
+                    <Link href="#contact">{dictionary.home.cta.contact}</Link>
                   </Button>
                 </div>
                 <div className="mt-6 flex justify-center space-x-4">
@@ -172,16 +229,14 @@ export default function Portfolio() {
             </section>
 
             <section id="about" className="py-12">
-              <h2 className="mb-6 text-2xl font-bold">About Me</h2>
+              <h2 className="mb-6 text-2xl font-bold">{dictionary.about.title}</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <p className="text-muted-foreground">
-                    I'm a fullstack web developer with expertise in React, Next.js, and Node.js. I'm passionate about
-                    creating clean, efficient, and user-friendly applications that solve real-world problems.
+                    {dictionary.about.bio1}
                   </p>
                   <p className="mt-4 text-muted-foreground">
-                    With over 5 years of experience in the industry, I've worked on a variety of projects from small
-                    business websites to large-scale enterprise applications.
+                    {dictionary.about.bio2}
                   </p>
                 </div>
                 <div className="relative aspect-square overflow-hidden rounded-lg border border-primary/10">
@@ -197,7 +252,7 @@ export default function Portfolio() {
             </section>
 
             <section id="projects" className="py-12">
-              <h2 className="mb-6 text-2xl font-bold">Featured Projects</h2>
+              <h2 className="mb-6 text-2xl font-bold">{dictionary.projects.title}</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 {[1, 2, 3, 4].map((project) => (
                   <div
@@ -216,16 +271,16 @@ export default function Portfolio() {
                     <div className="p-4">
                       <h3 className="font-semibold">Project Title {project}</h3>
                       <p className="mt-2 text-sm text-muted-foreground">
-                        A brief description of the project and the technologies used.
+                        {dictionary.projects.description}
                       </p>
                       <div className="mt-4 flex gap-2">
                         <Button variant="outline" size="sm" asChild>
-                          <Link href="#">View Project</Link>
+                          <Link href="#">{dictionary.projects.viewProject}</Link>
                         </Button>
                         <Button variant="ghost" size="sm" asChild>
                           <Link href="#">
                             <Github className="mr-2 h-4 w-4" />
-                            Code
+                            {dictionary.projects.viewCode}
                           </Link>
                         </Button>
                       </div>
@@ -236,10 +291,10 @@ export default function Portfolio() {
             </section>
 
             <section id="resume" className="py-12">
-              <h2 className="mb-6 text-2xl font-bold">Resume</h2>
+              <h2 className="mb-6 text-2xl font-bold">{dictionary.resume.title}</h2>
               <div className="rounded-lg border border-primary/10 bg-card p-6">
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold">Skills</h3>
+                  <h3 className="text-xl font-semibold">{dictionary.resume.skills}</h3>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "GraphQL", "PostgreSQL", "AWS"].map(
                       (skill) => (
@@ -254,53 +309,53 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold">Experience</h3>
+                  <h3 className="text-xl font-semibold">{dictionary.resume.experience}</h3>
                   <div className="mt-4 space-y-4">
                     <div>
                       <div className="flex items-center justify-between">
-                        <h4 className="font-medium">Senior Frontend Developer</h4>
-                        <span className="text-sm text-muted-foreground">2021 - Present</span>
+                        <h4 className="font-medium">{dictionary.resume.job1.title}</h4>
+                        <span className="text-sm text-muted-foreground">{dictionary.resume.job1.date}</span>
                       </div>
-                      <p className="text-sm text-muted-foreground">Tech Company Inc.</p>
+                      <p className="text-sm text-muted-foreground">{dictionary.resume.job1.company}</p>
                       <p className="mt-2 text-sm">
-                        Led the development of the company's main product, improving performance by 40%.
+                        {dictionary.resume.job1.description}
                       </p>
                     </div>
                     <div>
                       <div className="flex items-center justify-between">
-                        <h4 className="font-medium">Web Developer</h4>
-                        <span className="text-sm text-muted-foreground">2018 - 2021</span>
+                        <h4 className="font-medium">{dictionary.resume.job2.title}</h4>
+                        <span className="text-sm text-muted-foreground">{dictionary.resume.job2.date}</span>
                       </div>
-                      <p className="text-sm text-muted-foreground">Digital Agency Ltd.</p>
+                      <p className="text-sm text-muted-foreground">{dictionary.resume.job2.company}</p>
                       <p className="mt-2 text-sm">
-                        Developed and maintained websites for various clients using modern web technologies.
+                        {dictionary.resume.job2.description}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">Education</h3>
+                  <h3 className="text-xl font-semibold">{dictionary.resume.education}</h3>
                   <div className="mt-4">
                     <div className="flex items-center justify-between">
-                      <h4 className="font-medium">BSc in Computer Science</h4>
-                      <span className="text-sm text-muted-foreground">2014 - 2018</span>
+                      <h4 className="font-medium">{dictionary.resume.edu.degree}</h4>
+                      <span className="text-sm text-muted-foreground">{dictionary.resume.edu.date}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">University of Technology</p>
+                    <p className="text-sm text-muted-foreground">{dictionary.resume.edu.school}</p>
                   </div>
                 </div>
                 <div className="mt-6">
                   <Button asChild>
-                    <Link href="/resume.pdf">Download Full Resume</Link>
+                    <Link href="/resume.pdf">{dictionary.resume.download}</Link>
                   </Button>
                 </div>
               </div>
             </section>
 
             <section id="contact" className="py-12">
-              <h2 className="mb-6 text-2xl font-bold">Get In Touch</h2>
+              <h2 className="mb-6 text-2xl font-bold">{dictionary.contact.title}</h2>
               <div className="rounded-lg border border-primary/10 bg-card p-6">
                 <p className="mb-6 text-muted-foreground">
-                  Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+                  {dictionary.contact.description}
                 </p>
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-4">
@@ -327,13 +382,13 @@ export default function Portfolio() {
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <Link href="https://calendly.com/naroors">
                         <FileText className="mr-2 h-5 w-5" />
-                        Schedule a call
+                        {dictionary.contact.schedule}
                       </Link>
                     </Button>
                     <Button className="w-full justify-start" asChild>
                       <Link href="mailto:oliwernoga@onet.pl">
                         <Mail className="mr-2 h-5 w-5" />
-                        Send an email
+                        {dictionary.contact.sendEmail}
                       </Link>
                     </Button>
                   </div>
@@ -344,7 +399,7 @@ export default function Portfolio() {
 
           {/* Footer */}
           <footer className="mt-12 border-t border-primary/10 py-6 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Oliwer Noga. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Oliwer Noga. {dictionary.footer.rights}</p>
           </footer>
         </div>
       </div>
