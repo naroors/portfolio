@@ -18,6 +18,7 @@ export default function Portfolio() {
   const [showContent, setShowContent] = useState(false)
   const [language, setLanguage] = useState<string>('en')
   const [dictionary, setDictionary] = useState<Dictionary | null>(null)
+  const [isChangingLanguage, setIsChangingLanguage] = useState(false)
 
   // Load translations on mount
   useEffect(() => {
@@ -34,14 +35,25 @@ export default function Portfolio() {
     initLanguage();
   }, []);
 
-  // Switch language
+  // Switch language with smooth transition
   const toggleLanguage = async () => {
-    const newLanguage = language === 'en' ? 'pl' : 'en';
-    setLanguage(newLanguage);
-    saveLanguage(newLanguage);
+    // Start transition
+    setIsChangingLanguage(true);
     
-    const dict = await getDictionary(newLanguage);
-    setDictionary(dict);
+    // Wait for fade-out
+    setTimeout(async () => {
+      const newLanguage = language === 'en' ? 'pl' : 'en';
+      setLanguage(newLanguage);
+      saveLanguage(newLanguage);
+      
+      const dict = await getDictionary(newLanguage);
+      setDictionary(dict);
+      
+      // End transition with slight delay for smoother effect
+      setTimeout(() => {
+        setIsChangingLanguage(false);
+      }, 300);
+    }, 300);
   };
 
   useEffect(() => {
@@ -130,7 +142,7 @@ export default function Portfolio() {
       <div 
         className={cn(
           "min-h-screen bg-gradient-to-b from-background to-background/80 pb-8 transition-opacity duration-500",
-          showContent ? "opacity-100" : "opacity-0"
+          showContent && !isChangingLanguage ? "opacity-100" : "opacity-0"
         )}
       >
         <div className="mx-auto max-w-[800px] px-4 sm:px-6">
@@ -139,8 +151,9 @@ export default function Portfolio() {
             <Button 
               variant="outline" 
               size="sm" 
-              className="rounded-full" 
+              className={cn("rounded-full transition-opacity duration-300", isChangingLanguage ? "opacity-50" : "opacity-100")}
               onClick={toggleLanguage}
+              disabled={isChangingLanguage}
             >
               <Globe className="h-4 w-4 mr-2" />
               <span>{dictionary.languageSwitch}</span>
