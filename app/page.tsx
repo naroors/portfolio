@@ -78,7 +78,7 @@ export default function Portfolio() {
           </div>
         </div>
         <p className="mt-8 text-xl font-semibold text-primary animate-pulse">
-          Ładowanie portfolio...
+          Loading assets...
         </p>
       </div>
 
