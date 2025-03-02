@@ -112,7 +112,7 @@ export default function Portfolio() {
                   </Link>
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
-                  <Link href="https://twitter.com/naroors" aria-label="Twitter">
+                  <Link href="https://x.com/naroors_" aria-label="Twitter">
                     <Twitter className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -265,13 +265,13 @@ export default function Portfolio() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
                     <Mail className="h-5 w-5 text-primary" />
-                    <a href="mailto:contact@naroors.com" className="hover:text-primary">
-                      contact@naroors.com
+                    <a href="mailto:oliwernoga@onet.pl" className="hover:text-primary">
+                      oliwernoga@onet.pl
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
                     <Twitter className="h-5 w-5 text-primary" />
-                    <a href="https://twitter.com/naroors" className="hover:text-primary">
+                    <a href="https://x.com/naroors_" className="hover:text-primary">
                       @naroors
                     </a>
                   </div>
@@ -290,7 +290,7 @@ export default function Portfolio() {
                     </Link>
                   </Button>
                   <Button className="w-full justify-start" asChild>
-                    <Link href="mailto:contact@naroors.com">
+                    <Link href="mailto:oliwernoga@onet.pl">
                       <Mail className="mr-2 h-5 w-5" />
                       Send an email
                     </Link>
