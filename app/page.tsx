@@ -85,10 +85,10 @@ export default function Portfolio() {
           <section id="home" className="py-12">
             <div className="flex flex-col items-center text-center">
               <Image
-                src="/placeholder.svg?height=50&width=50"
+                src="/profile.png"
                 alt="Oliwer's profile picture"
-                width={50}
-                height={50}
+                width={150}
+                height={150}
                 className="rounded-full mb-4"
               />
               <h2 className="text-4xl font-bold">
