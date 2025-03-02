@@ -87,8 +87,8 @@ export default function Portfolio() {
               <Image
                 src="/profile.png"
                 alt="Oliwer's profile picture"
-                width={25}
-                height={25}
+                width={55}
+                height={55}
                 className="rounded-full mb-4"
               />
               <h2 className="text-4xl font-bold">
