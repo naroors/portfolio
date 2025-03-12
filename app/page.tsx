@@ -265,7 +265,7 @@ export default function Portfolio() {
                 </div>
                 <div className="relative aspect-square overflow-hidden rounded-lg border border-primary/10">
                   <Image
-                    src="/placeholder.svg?height=400&width=400"
+                    src="/image.png?height=400&width=400"
                     alt="Oliwer Noga"
                     fill
                     className="object-cover"
