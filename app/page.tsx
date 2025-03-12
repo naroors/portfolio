@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Github, Twitter, Linkedin, Mail, Home, User, Briefcase, FileText, Globe } from "lucide-react"
+import { Github, Twitter, Linkedin, Mail, Home, User, Briefcase, FileText, Globe, Phone } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -278,31 +278,47 @@ export default function Portfolio() {
             <section id="projects" className="py-12">
               <h2 className="mb-6 text-2xl font-bold">{dictionary.projects.title}</h2>
               <div className="grid gap-6 md:grid-cols-2">
-                {[1, 2, 3, 4].map((project) => (
+                {[
+                  {
+                    id: 1,
+                    title: dictionary.projects.projectOne.title,
+                    description: dictionary.projects.projectOne.description,
+                    link: "https://rpe-calculator.vercel.app/",
+                    codeLink: "https://github.com/naroors/rpe-calculator",
+                    image: "project1.png"
+                  },
+                  {
+                    id: 2,
+                    title: dictionary.projects.projectTwo.title,
+                    description: dictionary.projects.projectTwo.description,
+                    link: "#",
+                    codeLink: "#",
+                    image: "/path/to/image2.jpg"
+                  },
+                  // Dodaj więcej projektów tutaj
+                ].map((project) => (
                   <div
-                    key={project}
+                    key={project.id}
                     className="group overflow-hidden rounded-lg border border-primary/10 bg-card transition-all hover:shadow-md"
                   >
-                    <div className="relative aspect-video overflow-hidden">
-                      <Image
-                        src={`/placeholder.svg?height=300&width=600&text=Project+${project}`}
-                        alt={`Project ${project}`}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 400px"
-                      />
-                    </div>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={600}
+                      height={400}
+                      className="object-cover w-full h-80"
+                    />
                     <div className="p-4">
-                      <h3 className="font-semibold">Project Title {project}</h3>
+                      <h3 className="font-semibold">{project.title}</h3>
                       <p className="mt-2 text-sm text-muted-foreground">
-                        {dictionary.projects.description}
+                        {project.description}
                       </p>
                       <div className="mt-4 flex gap-2">
                         <Button variant="outline" size="sm" asChild>
-                          <Link href="#">{dictionary.projects.viewProject}</Link>
+                          <Link href={project.link}>{dictionary.projects.viewProject}</Link>
                         </Button>
                         <Button variant="ghost" size="sm" asChild>
-                          <Link href="#">
+                          <Link href={project.codeLink}>
                             <Github className="mr-2 h-4 w-4" />
                             {dictionary.projects.viewCode}
                           </Link>
@@ -384,6 +400,12 @@ export default function Portfolio() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
+                      <Phone className="h-5 w-5 text-primary" />
+                      <a href="tel:+48531756838" className="hover:text-primary">
+                        (48) 531 756 838
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2">
                       <Mail className="h-5 w-5 text-primary" />
                       <a href="mailto:oliwernoga@onet.pl" className="hover:text-primary">
                         oliwernoga@onet.pl
@@ -402,6 +424,7 @@ export default function Portfolio() {
                       </a>
                     </div>
                   </div>
+                  
                   <div className="flex flex-col gap-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <Link href="https://calendly.com/naroors">

@@ -1,7 +1,7 @@
 {
   "loading": "Ładowanie portfolio...",
   "nav": {
-    "home": "Strona Główna",
+    "home": "Główna",
     "about": "O Mnie",
     "projects": "Projekty",
     "resume": "CV",
@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Cześć, jestem",
-    "intro": "Pasjonat tworzenia wyjątkowych doświadczeń cyfrowych. Obecnie skupiam się na tworzeniu dostępnych, zorientowanych na człowieka produktów.",
+    "intro": "Pasjonat tworzenia wyjątkowych stron internetowych. Obecnie skupiam się na tworzeniu nowoczesnych, szybkich oraz pieknych stron internetowych.",
     "cta": {
       "viewWork": "Zobacz projekty",
       "contact": "Skontaktuj się"
@@ -18,11 +18,19 @@
   "about": {
     "title": "O Mnie",
     "bio1": "Jestem full-stack developerem z pasją do tworzenia pięknych, funkcjonalnych i przyjaznych dla użytkownika stron internetowych i aplikacji. Mam doświadczenie w pracy z różnymi technologiami i frameworkami.",
-    "bio2": "Gdy nie koduję, można mnie znaleźć eksplorującego nowe technologie, przyczyniającego się do projektów open-source lub spędzającego czas na świeżym powietrzu."
+    "bio2": "Gdy nie koduję, można mnie znaleźć na siłowni, bądź czytającego nowe technologie, przyczyniającego się do projektów open-source lub spędzającego czas na świeżym powietrzu."
   },
   "projects": {
     "title": "Projekty",
-    "description": "Krótki opis projektu i wykorzystanych technologii.",
+    "projectOne": {
+      "title": "Kalkulator 1RM z użyciem RPE",
+      "description": "Kalkulator maksymalnego obciążenia na jedno powtórzenie (1RM), z dodatkową metryką RPE. Zrobiony za pomocą NextJS, TypeScript, ShadCN & Zed"
+    },
+    "projectTwo": {
+      "title": "Project 2",
+      "description": "Description of project 2."
+    },
+    "description": "Opis użytych technologii",
     "viewProject": "Zobacz projekt",
     "viewCode": "Zobacz kod"
   },
@@ -31,22 +39,22 @@
     "skills": "Umiejętności",
     "experience": "Doświadczenie",
     "job1": {
-      "title": "Senior Frontend Developer",
-      "date": "2021 - Obecnie",
-      "company": "Tech Company Inc.",
-      "description": "Praca nad dużą aplikacją webową z wykorzystaniem React, TypeScript i Next.js. Implementacja złożonych komponentów UI i optymalizacja wydajności."
+      "title": "Fullstack Web Developer",
+      "date": "2023 - Obecnie",
+      "company": "Rusz Naprzód™",
+      "description": "Praca nad dużą aplikacją webową z wykorzystaniem React, TypeScript, NextJS, ShadCN, Supabase. Implementacja złożonych komponentów UI i optymalizacja wydajności."
     },
     "job2": {
-      "title": "Full-Stack Developer",
-      "date": "2018 - 2021",
-      "company": "Digital Agency",
-      "description": "Tworzenie stron internetowych i aplikacji dla klientów. Praca z React, Node.js i różnymi bazami danych."
+      "title": "Front-End Developer",
+      "date": "2020 - 2022",
+      "company": "Allkoparka",
+      "description": "Tworzenie stron internetowych i aplikacji dla klientów. Praca z Tailwind, Bootstrap oraz innymi frameworkami."
     },
     "education": "Edukacja",
     "edu": {
-      "degree": "Licencjat Informatyki",
-      "date": "2014 - 2018",
-      "school": "Uniwersytet Technologiczny"
+      "degree": "Technik programista",
+      "date": "2021 - 2025",
+      "school": "Elitarne Technikum Informatyczne"
     },
     "download": "Pobierz CV"
   },
