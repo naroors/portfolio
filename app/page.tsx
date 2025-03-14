@@ -286,16 +286,15 @@ export default function Portfolio() {
                     link: "https://rpe-calculator.vercel.app/",
                     codeLink: "https://github.com/naroors/rpe-calculator",
                     image: "project1.png"
-                  }
-                  // {
-                  //   id: 2,
-                  //   title: dictionary.projects.projectTwo.title,
-                  //   description: dictionary.projects.projectTwo.description,
-                  //   link: "#",
-                  //   codeLink: "#",
-                  //   image: "/path/to/image2.jpg"
-                  // },
-                  // Dodaj więcej projektów tutaj
+                  },
+                  {
+                    id: 2,
+                    title: dictionary.projects.projectTwo.title,
+                    description: dictionary.projects.projectTwo.description,
+                    link: "https://rusznaprzod.vercel.app/",
+                    codeLink: "#",
+                    image: "project2.png"
+                  },
                 ].map((project) => (
                   <div
                     key={project.id}

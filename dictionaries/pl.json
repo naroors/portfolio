@@ -27,8 +27,8 @@
       "description": "Kalkulator maksymalnego obciążenia na jedno powtórzenie (1RM), z dodatkową metryką RPE. Zrobiony za pomocą NextJS, TypeScript, ShadCN & Zed"
     },
     "projectTwo": {
-      "title": "Project 2",
-      "description": "Description of project 2."
+      "title": "Trener personalny AI.",
+      "description": "Aplikacja AI do personalizacji planów treningowych i dietetycznych, monitorująca postępy użytkowników, stale dająca rady."
     },
     "description": "Opis użytych technologii",
     "viewProject": "Zobacz projekt",
