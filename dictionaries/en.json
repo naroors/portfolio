@@ -27,8 +27,8 @@
       "description": "A calculator for maximum load for one repetition (1RM), with an additional RPE metric. Built using NextJS, TypeScript, ShadCN & Zed."
     },
     "projectTwo": {
-      "title": "Project 2",
-      "description": "Description of project 2."
+      "title": "AI Personal Trainer",
+      "description": "An AI application for personalizing training and diet plans, monitoring user progress, and providing ongoing advice."
     },
     "description": "A brief description of the project and the technologies used.",
     "viewProject": "View Project",
