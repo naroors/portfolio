@@ -343,7 +343,7 @@ export default function Portfolio() {
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold">{dictionary.resume.skills}</h3>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "GraphQL", "PostgreSQL", "AWS"].map(
+                    {["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "GraphQL", "PostgreSQL", "AWS", "Supabase", "ShadCN", "Zed", "OpenRouter"].map(
                       (skill) => (
                         <div
                           key={skill}
