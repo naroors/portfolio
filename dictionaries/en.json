@@ -30,6 +30,10 @@
       "title": "AI Personal Trainer",
       "description": "An AI application for personalizing training and diet plans, monitoring user progress, and providing ongoing advice."
     },
+    "projectThree": {
+      "title": "AI Enhanced Powerlifting Trainer",
+      "description": "An AI enhanced powerlifting trainer. Technologies: NextJS, TypeScript, ShadCN, Zed, OpenRouter & Supabase"
+    },
     "description": "A brief description of the project and the technologies used.",
     "viewProject": "View Project",
     "viewCode": "View Code"

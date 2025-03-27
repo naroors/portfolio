@@ -295,6 +295,14 @@ export default function Portfolio() {
                     codeLink: "#",
                     image: "project2.png"
                   },
+                  {
+                    id: 3,
+                    title: dictionary.projects.projectThree?.title || "Personal Portfolio",
+                    description: dictionary.projects.projectThree?.description || "A modern portfolio website built with NextJS, TypeScript, and Tailwind CSS.",
+                    link: "https://rusznaprzod-ai.vercel.app/",
+                    codeLink: "#",
+                    image: "project3.png"
+                  },
                 ].map((project) => (
                   <div
                     key={project.id}
@@ -445,7 +453,7 @@ export default function Portfolio() {
 
           {/* Footer */}
           <footer className="mt-12 border-t border-primary/10 py-6 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Oliwer Noga. {dictionary.footer.rights}</p>
+            <p>&copy; {new Date().getFullYear()} Oliwer Noga. {dictionary.footer.rights}</p>
           </footer>
         </div>
       </div>
@@ -530,4 +538,3 @@ function MobileNavLink({
     </Link>
   )
 }
-

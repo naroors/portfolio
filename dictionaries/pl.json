@@ -27,8 +27,12 @@
       "description": "Kalkulator maksymalnego obciążenia na jedno powtórzenie (1RM), z dodatkową metryką RPE. Zrobiony za pomocą NextJS, TypeScript, ShadCN & Zed"
     },
     "projectTwo": {
-      "title": "Trener personalny AI.",
+      "title": "Trener personalny AI - UI.",
       "description": "Aplikacja AI do personalizacji planów treningowych i dietetycznych, monitorująca postępy użytkowników, stale dająca rady."
+    },
+    "projectThree": {
+      "title": "Trener do trójboju siłowego wspomagany przez AI.",
+      "description": "Trener do trójboju siłowego wspomagany przez AI. Technologie: NextJS, TypeScript, ShadCN, Zed, OpenRouter & Supabase"
     },
     "description": "Opis użytych technologii",
     "viewProject": "Zobacz projekt",

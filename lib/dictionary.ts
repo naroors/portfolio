@@ -22,6 +22,18 @@ export interface Dictionary {
   };
   projects: {
     title: string;
+    projectOne: {
+      title: string;
+      description: string;
+    };
+    projectTwo: {
+      title: string;
+      description: string;
+    };
+    projectThree?: {
+      title: string;
+      description: string;
+    };
     description: string;
     viewProject: string;
     viewCode: string;
